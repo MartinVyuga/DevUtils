@@ -1,66 +1,58 @@
-﻿namespace Developer_Tools_Labels_Editor
+﻿using System;
+using System.ComponentModel.Composition;
+using Microsoft.Dynamics.Framework.Tools.Extensibility;
+using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
+
+namespace Developer_Tools_Labels_Editor.Parameters
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.ComponentModel.Composition;
-    using System.Drawing;
-    using Microsoft.Dynamics.Framework.Tools.Extensibility;
-    using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
-
-
-    /// <summary>
-    /// TODO: Say a few words about what your AddIn is going to do
-    /// </summary>
     [Export(typeof(IMainMenu))]
-    public class MainMenuAddIn : MainMenuBase
+    public class ParametersMenu : MainMenuBase
     {
         #region Member variables
-        private const string addinName = "Developer_Tools_Labels_Editor";
-        #endregion
 
-        #region Properties
-        /// <summary>
-        /// Caption for the menu item. This is what users would see in the menu.
-        /// </summary>
-        public override string Caption
-        {
-            get
-            {
-                return AddinResources.MainMenuAddInCaption;
-            }
-        }
-
-        /// <summary>
-        /// Unique name of the add-in
-        /// </summary>
-        public override string Name
-        {
-            get
-            {
-                return MainMenuAddIn.addinName;
-            }
-        }
+        private const string addinName = "DevUtilsAddins";
 
         #endregion
 
         #region Callbacks
+
         /// <summary>
-        /// Called when user clicks on the add-in menu
+        ///     Called when user clicks on the add-in menu
         /// </summary>
         /// <param name="e">The context of the VS tools and metadata</param>
         public override void OnClick(AddinEventArgs e)
         {
             try
             {
-                // TODO: Do your magic for your add-in
+                var paramsWin = new Parameters();
+                paramsWin.ShowDialog();
             }
             catch (Exception ex)
             {
                 CoreUtility.HandleExceptionWithErrorMessage(ex);
             }
         }
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        ///     Caption for the menu item. This is what users would see in the menu.
+        /// </summary>
+        public override string Caption
+        {
+            get { return "DevUtils - Settings"; }
+        }
+
+        /// <summary>
+        ///     Unique name of the add-in
+        /// </summary>
+        public override string Name
+        {
+            get { return addinName; }
+        }
+
         #endregion
     }
 }

@@ -13,6 +13,7 @@ using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
 using Microsoft.Dynamics.Framework.Tools.ProjectSupport;
 using Microsoft.Dynamics.Framework.Tools.ProjectSystem;
 using System.Threading.Tasks;
+using Developer_Tools_Labels_Editor.Parameters;
 
 namespace Developer_Tools_Labels_Editor
 {
@@ -113,7 +114,7 @@ namespace Developer_Tools_Labels_Editor
 
             if (string.IsNullOrEmpty(defaultLablesFileName))
                 throw new System.Exception(
-                    "Label file name not specified in the Settings: Dynamics 365 > Addins > Ninja DevTools Settings");
+                    "Label file name not specified in the Settings: Dynamics 365 > Addins > DevTools Settings");
 
             var lableFile = MetaModelService.GetLabelFile(defaultLablesFileName);
             if (lableFile == null)
@@ -136,7 +137,7 @@ namespace Developer_Tools_Labels_Editor
                 labelEditorController.Save();
             }
 
-            return $"@{extension}Labels:{labelKey}";
+            return $"@{extension}:{labelKey}";
         }
 
         private static string UppercaseFirst(this string s)

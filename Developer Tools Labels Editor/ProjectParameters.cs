@@ -6,7 +6,7 @@ using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
 using Microsoft.Dynamics.Framework.Tools.ProjectSupport;
 using Exception = System.Exception;
 
-namespace Developer_Tools_Labels_Editor
+namespace Developer_Tools_Labels_Editor.Parameters
 {
     /// <summary>
     /// Singleton saves all project parameters
@@ -33,10 +33,10 @@ namespace Developer_Tools_Labels_Editor
 
         public static void Contruct()
         {
-
+          
             XmlDocument doc = new XmlDocument();
             var xsSubmit = new XmlSerializer(typeof(ProjectParameters));
-            ParamFilePath = Helper.GetActiveProjectNode().ProjectFolder + @"\NinjaDevAddinsParam.xml";
+            ParamFilePath =  Helper.GetActiveProjectNode().ProjectFolder + @"\DevUtilsAddinsParam.xml";
 
             if (File.Exists(ParamFilePath))
             {
@@ -44,7 +44,7 @@ namespace Developer_Tools_Labels_Editor
 
                 using (TextReader reader = new StringReader(doc.InnerXml))
                 {
-                    var projParams = (ProjectParameters)xsSubmit.Deserialize(reader);
+                    var projParams = (ProjectParameters) xsSubmit.Deserialize(reader);
                     Instance.Extension = projParams.Extension;
                     Instance.DefaultLabelsFileName = projParams.DefaultLabelsFileName;
                 }

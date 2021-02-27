@@ -19,6 +19,7 @@
     using EnvDTE80;
     using Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.Menus;
     using Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.BaseTypes;
+    using Developer_Tools_Labels_Editor.Parameters;
 
     /// <summary>
     /// This addin is designed to automatically add labels into the label file from properties
@@ -55,7 +56,7 @@
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "DEV Label Editor";
+        public override string Caption => "DEV: Convert Text into labels";
 
         private const string AddinName = "DEVUtilsD365.LabelEditor";
         /// <summary>
@@ -109,6 +110,18 @@
         {
             if (ProjectParameters.Instance == null)
                 ProjectParameters.Contruct();
+            ModelInfoCollection modelInfoCollection = null;
+
+            IMetaModelService metaModelService = null;
+            // Get the metamodel provider
+            var metaModelProvider = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
+            metaModelService = metaModelProvider?.CurrentMetaModelService;
+
+            if (metaModelProvider != null)
+            {
+                // Get the metamodel service
+                metaModelService = metaModelProvider.CurrentMetaModelService;
+            }
 
             try
             {
@@ -116,7 +129,10 @@
                 {
                     var table = e.SelectedElement as ITable;
 
-                    table.Label = table.Name.Convert(table.Label);
+                    modelInfoCollection = metaModelService.GetTableModelInfo(table.Name);
+                    AxLabelFile labelFile = this.GetLabelFile(metaModelProvider, metaModelService, modelInfoCollection);
+
+                    this.createLabel(table, labelFile);
                 }
                 if (e.SelectedElement is IForm)
                 {
@@ -187,14 +203,17 @@
                 Layer = modelInfo.Layer,
             };
 
-            // Get the list of label files from that model
-            IList<String> labelFileNames = metaModelProviders.CurrentMetadataProvider.LabelFiles.ListObjectsForModel(modelInfo.Name);
+            var extension = ProjectParameters.Instance.Extension;
+            var defaultLablesFileName = ProjectParameters.Instance.DefaultLabelsFileName;
 
-            // Choose the en-us
-            //var labelfile = (from labelFileName in labelFileNames 
-            //                    where labelFileName.Contains("en-us")
-            //                     select labelFileName).First<String>();
-            AxLabelFile labelFile = metaModelService.GetLabelFile(labelFileNames[0], modelLoadInfo);
+            if (string.IsNullOrEmpty(defaultLablesFileName))
+                throw new System.Exception(
+                    "Label file name not specified in the Settings: Dynamics 365 > Addins > DevTools Settings");
+
+            AxLabelFile labelFile = metaModelService.GetLabelFile(defaultLablesFileName);
+            
+            if (labelFile == null)
+                throw new Exception("Labels file not found");
 
             return labelFile;
         }
@@ -203,7 +222,7 @@
         {
             if (this.IsValidLabelId(table.Label) == false)
             {
-                table.Label = this.FindOrCreateLabel(table.Label, table.Name, "Label", labelFile);
+                table.Label = this.FindOrCreateLabel(table.Label, table.Name, "Lbl", labelFile);
             }
 
             if (this.IsValidLabelId(table.DeveloperDocumentation) == false)
@@ -217,7 +236,7 @@
                 var field = fieldsEnumerator.Current as IBaseField;
                 if (!this.IsValidLabelId(field.Label))
                 { 
-                    field.Label = this.FindOrCreateLabel(field.Label, field.Name,"",labelFile);
+                    field.Label = this.FindOrCreateLabel(field.Label, field.Name,"Lbl",labelFile);
                 }
                 if (!this.IsValidLabelId(field.HelpText))
                 {
@@ -232,7 +251,7 @@
                 var fieldGroup = fieldGroupsEnumerator.Current as IFieldGroup;
                 if (!this.IsValidLabelId(fieldGroup.Label))
                 {
-                    fieldGroup.Label = this.FindOrCreateLabel(fieldGroup.Label, fieldGroup.Name, "", labelFile);
+                    fieldGroup.Label = this.FindOrCreateLabel(fieldGroup.Label, fieldGroup.Name, "lbl", labelFile);
                 }
 
             }
