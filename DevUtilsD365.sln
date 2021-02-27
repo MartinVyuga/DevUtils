@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEVUtilsD365", "DEVUtilsD36
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTableFindMethodTest", "AddTableFindMethodTest\AddTableFindMethodTest.csproj", "{B6E6E027-FF26-4E9E-B03B-DB07570C77DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallToVS", "InstallToVS\InstallToVS.csproj", "{2470C9A5-2F02-4BF3-8C13-1BEB08707476}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Developer Tools Labels Editor", "Developer Tools Labels Editor\Developer Tools Labels Editor.csproj", "{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}"
 EndProject
 Global
@@ -23,10 +21,7 @@ Global
 		{3A63594B-16DA-4EDD-93C5-A38D01ABDB10}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6E6E027-FF26-4E9E-B03B-DB07570C77DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6E6E027-FF26-4E9E-B03B-DB07570C77DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6E6E027-FF26-4E9E-B03B-DB07570C77DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2470C9A5-2F02-4BF3-8C13-1BEB08707476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2470C9A5-2F02-4BF3-8C13-1BEB08707476}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2470C9A5-2F02-4BF3-8C13-1BEB08707476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6E6E027-FF26-4E9E-B03B-DB07570C77DF}.Release|Any CPU.Build.0 = Release|Any CPU		
 		{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
