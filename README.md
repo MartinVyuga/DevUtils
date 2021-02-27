@@ -2,6 +2,7 @@
 
 A set of Visual Studio Add-ins for Microsoft Dynamics 365 for Operation that will allow you to perform quickly common development tasks.
 
+* [Make text into labels](#Make-text-into-labels)
 * [Create extension class](#create-extension-class)
 * [Copy extension method](#copy-extension-method)
 * [Enum builder](#enum-builder)
@@ -17,6 +18,11 @@ A set of Visual Studio Add-ins for Microsoft Dynamics 365 for Operation that wil
 * [Installation](#installation)
 
 You are more than welcome to contribute!
+
+## Make text into labels
+This Add-In works so far for standard Tables, Table Fields, and field groups.
+
+TODO: Add support for forms, form designs etc. 
 
 ## Create extension class
 
@@ -180,9 +186,14 @@ Another option (this will run a new instance of VS)
 ## Installation
 
 Download all dll files and and copy **.dll** and **.pdb** to the VS AddinExtensions folders.
+
 It is located here: C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\ezldjgl4.uep\AddinExtensions
 Path can vary.
-TODO: find out what is the path?
-Restart VS
 
-You can also copy these files manually, but extension path will be different for different VMs. (for 8.0 local DEV VM it will be C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\agk3do44.e2i\AddinExtensions, for 8.1 local DEV VM: C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ugjn0jrw.pfb\AddinExtensions )
+TODO: find out what is the path through powershell install script?
+
+Restart VS.
+
+You can also copy these files manually, but extension path will be different for different VMs. (for 10.0 local DEV VM it will be C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\wn3eorov.53w\AddinExtensions)
+
+Don't copy to both folders as AddIn will appear twice.
