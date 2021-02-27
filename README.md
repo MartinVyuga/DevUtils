@@ -1,4 +1,4 @@
-﻿# TRUDUtilsD365
+﻿# DEVUtilsD365
 
 A set of Visual Studio Add-ins for Microsoft Dynamics 365 for Operation that will allow you to perform quickly common development tasks.
 
