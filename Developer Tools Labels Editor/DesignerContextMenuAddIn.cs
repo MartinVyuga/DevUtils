@@ -1,5 +1,6 @@
 ﻿namespace Developer_Tools_Labels_Editor
 {
+    using Menu = Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.Menus;
     using System;
     using System.Linq;
     using System.ComponentModel.Composition;
@@ -38,13 +39,18 @@
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldGroup))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldGuid))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldInt))]
-    [DesignerMenuExportMetadata(AutomationNodeType = typeof(Microsoft.Dynamics.AX.Metadata.MetaModel.IFieldString))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(Microsoft.Dynamics.AX.Metadata.MetaModel.IFieldReal))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldTime))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(Microsoft.Dynamics.AX.Metadata.MetaModel.IFieldString))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IFieldUtcDateTime))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(BaseField))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(Menu.IMenuItemDisplay))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(Menu.IMenu))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(Menu.IMenuItemAction))]
+    [DesignerMenuExportMetadata(AutomationNodeType = typeof(Menu.IMenuItemOutput))]
     public class DesignerContextMenuAddIn : DesignerMenuBase
     {
+
         #region Properties
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
@@ -101,32 +107,67 @@
         //Handle the click event in the OnClick method.  Here we will test the selected object, get the object’s model and label file, and create the label.
         public override void OnClick(AddinDesignerEventArgs e)
         {
-            ModelInfoCollection modelInfoCollection = null;
-
-            IMetaModelService metaModelService = null;
-            // Get the metamodel provider
-            var metaModelProvider = CoreUtility.ServiceProvider.GetService(typeof(IMetaModelProviders)) as IMetaModelProviders;
-            metaModelService = metaModelProvider?.CurrentMetaModelService;
-
-            if (metaModelProvider != null)
-            {
-                // Get the metamodel service
-                metaModelService = metaModelProvider.CurrentMetaModelService;
-            }
+            if (ProjectParameters.Instance == null)
+                ProjectParameters.Contruct();
 
             try
             {
-                // Is the selected element a table?
                 if (e.SelectedElement is ITable)
                 {
-                    ITable table = e.SelectedElement as ITable;
+                    var table = e.SelectedElement as ITable;
 
-                    modelInfoCollection = metaModelService.GetTableModelInfo(table.Name);
-                    AxLabelFile labelFile = this.GetLabelFile(metaModelProvider, metaModelService, modelInfoCollection);
-
-                    this.createLabel(table, labelFile);
+                    table.Label = table.Name.Convert(table.Label);
                 }
-                
+                if (e.SelectedElement is IForm)
+                {
+                    var form = e.SelectedElement as IForm;
+                    form.FormDesign.Caption = form.Name.Convert();
+                }
+
+
+                if (e.SelectedElement is IBaseEnum)
+                {
+                    var @enum = e.SelectedElement as IBaseEnum;
+                    @enum.Label = @enum.Name.Convert();
+                }
+                if (e.SelectedElement is IEdtBase)
+                {
+                    var edt = e.SelectedElement as IEdtBase;
+                    edt.Label = edt.Name.Convert();
+                }
+
+                if (e.SelectedElement is IBaseField)
+                {
+                    var edt = e.SelectedElement as IBaseField;
+                    edt.Label = edt.Name.Convert();
+                }
+
+
+
+                if (e.SelectedElement is Menu.IMenuItemDisplay)
+                {
+                    var menu = e.SelectedElement as Menu.IMenuItemDisplay;
+                    menu.Label = menu.Name.Convert();
+                }
+
+                if (e.SelectedElement is Menu.IMenuItemOutput)
+                {
+                    var menu = e.SelectedElement as Menu.IMenuItemOutput;
+                    menu.Label = menu.Name.Convert();
+                }
+
+                if (e.SelectedElement is Menu.IMenu)
+                {
+                    var menu = e.SelectedElement as Menu.IMenu;
+                    menu.Label = menu.Name.Convert();
+                }
+
+                if (e.SelectedElement is IBaseEnumValue)
+                {
+                    var menu = e.SelectedElement as IBaseEnumValue;
+                    menu.Label = menu.Name.Convert();
+
+                }
             }
             catch (Exception ex)
             {

@@ -61,7 +61,7 @@ namespace Developer_Tools_Labels_Editor {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Labels.
+        ///   Looks up a localized string similar to DevUtils Create Labels.
         /// </summary>
         internal static string DesignerAddinCaption {
             get {
@@ -70,7 +70,7 @@ namespace Developer_Tools_Labels_Editor {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Label Editor.
+        ///   Looks up a localized string similar to DevUtils Label Editor.
         /// </summary>
         internal static string MainMenuAddInCaption {
             get {
