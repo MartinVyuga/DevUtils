@@ -56,7 +56,7 @@
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "Developer tools: Convert Text into labels";
+        public override string Caption => "Developer Tools - Convert Text into labels";
 
         private const string AddinName = "DEVUtilsD365.LabelEditor";
         /// <summary>
@@ -140,7 +140,6 @@
                     form.FormDesign.Caption = form.Name.Convert();
                 }
 
-
                 if (e.SelectedElement is IBaseEnum)
                 {
                     var @enum = e.SelectedElement as IBaseEnum;
@@ -150,12 +149,24 @@
                 {
                     var edt = e.SelectedElement as IEdtBase;
                     edt.Label = edt.Name.Convert();
+                    if (!this.IsValidLabelId(edt.HelpText))
+                    {
+                        modelInfoCollection = metaModelService.GetTableModelInfo(edt.Name);
+                        AxLabelFile labelFile = this.GetLabelFile(metaModelProvider, metaModelService, modelInfoCollection);
+                        edt.HelpText = this.FindOrCreateLabel(edt.HelpText, edt.Name, "Hlp", labelFile);
+                    }
                 }
 
                 if (e.SelectedElement is IBaseField)
                 {
                     var edt = e.SelectedElement as IBaseField;
                     edt.Label = edt.Name.Convert();
+                    if (!this.IsValidLabelId(edt.HelpText))
+                    {
+                        modelInfoCollection = metaModelService.GetTableModelInfo(edt.Name);
+                        AxLabelFile labelFile = this.GetLabelFile(metaModelProvider, metaModelService, modelInfoCollection);
+                        edt.HelpText = this.FindOrCreateLabel(edt.HelpText, edt.Name, "Hlp", labelFile);
+                    }
                 }
 
 
@@ -164,18 +175,33 @@
                 {
                     var menu = e.SelectedElement as Menu.IMenuItemDisplay;
                     menu.Label = menu.Name.Convert();
+                    
+                    if (!this.IsValidLabelId(menu.HelpText))
+                    {
+                        modelInfoCollection = metaModelService.GetTableModelInfo(menu.Name);
+                        AxLabelFile labelFile = this.GetLabelFile(metaModelProvider, metaModelService, modelInfoCollection);
+                        menu.HelpText = this.FindOrCreateLabel(menu.HelpText, menu.Name, "Hlp", labelFile);
+                    }
                 }
 
                 if (e.SelectedElement is Menu.IMenuItemOutput)
                 {
                     var menu = e.SelectedElement as Menu.IMenuItemOutput;
                     menu.Label = menu.Name.Convert();
+                    if (!this.IsValidLabelId(menu.HelpText))
+                    {
+                        modelInfoCollection = metaModelService.GetTableModelInfo(menu.Name);
+                        AxLabelFile labelFile = this.GetLabelFile(metaModelProvider, metaModelService, modelInfoCollection);
+                        menu.HelpText = this.FindOrCreateLabel(menu.HelpText, menu.Name, "Hlp", labelFile);
+                    }
                 }
 
                 if (e.SelectedElement is Menu.IMenu)
                 {
                     var menu = e.SelectedElement as Menu.IMenu;
                     menu.Label = menu.Name.Convert();
+
+
                 }
 
                 if (e.SelectedElement is IBaseEnumValue)
@@ -193,16 +219,6 @@
 
         private AxLabelFile GetLabelFile(IMetaModelProviders metaModelProviders, IMetaModelService metaModelService, ModelInfoCollection modelInfoCollection)
         {
-            // Choose the first model in the collection
-            ModelInfo modelInfo = ((System.Collections.ObjectModel.Collection<ModelInfo>)modelInfoCollection)[0];
-
-            // Construct a ModelLoadInfo
-            ModelLoadInfo modelLoadInfo = new ModelLoadInfo
-            {
-                Id = modelInfo.Id,
-                Layer = modelInfo.Layer,
-            };
-
             var extension = ProjectParameters.Instance.Extension;
             var defaultLablesFileName = ProjectParameters.Instance.DefaultLabelsFileName;
 
