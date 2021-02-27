@@ -49,9 +49,9 @@
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "Scales Label Editor";
+        public override string Caption => "DEV Label Editor";
 
-        private const string AddinName = "SCAUtilsD365.LabelEditor";
+        private const string AddinName = "DEVUtilsD365.LabelEditor";
         /// <summary>
         ///     Unique name of the add-in
         /// </summary>
