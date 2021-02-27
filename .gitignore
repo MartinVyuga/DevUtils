@@ -244,3 +244,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /ClassLibrary1
+/TRUDUtilsD365.sln
