@@ -13,7 +13,7 @@ namespace DevUtilsD365.RunBaseBuilder
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "DevUtils - RunBase class builder";
+        public override string Caption => "Developer Tools - RunBase class builder";
 
         private const string AddinName = "DevUtilsD365.RunBaseBuilder";
         /// <summary>

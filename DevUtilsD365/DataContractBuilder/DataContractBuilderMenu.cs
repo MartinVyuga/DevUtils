@@ -13,7 +13,7 @@ namespace DevUtilsD365.DataContractBuilder
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "DevUtils - DataContract class builder";
+        public override string Caption => "Developer Tools - DataContract class builder";
 
         private const string AddinName = "DevUtilsD365.DataContractBuilder";
         /// <summary>

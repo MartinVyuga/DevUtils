@@ -56,7 +56,7 @@
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "DEV: Convert Text into labels";
+        public override string Caption => "Developer tools: Convert Text into labels";
 
         private const string AddinName = "DEVUtilsD365.LabelEditor";
         /// <summary>

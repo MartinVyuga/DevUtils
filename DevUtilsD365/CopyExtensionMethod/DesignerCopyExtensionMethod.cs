@@ -15,7 +15,7 @@ namespace DevUtilsD365.CopyExtensionMethod
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "DevUtils - Copy extension method";
+        public override string Caption => "Developer Tools - Copy extension method";
 
         private const string AddinName = "DevUtilsD365.CopyExtensionMethod";
         /// <summary>

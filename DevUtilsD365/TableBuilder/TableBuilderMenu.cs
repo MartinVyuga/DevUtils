@@ -15,7 +15,7 @@ namespace DevUtilsD365.TableBuilder
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "DevUtils - Table builder";
+        public override string Caption => "Developer Tools - Table builder";
 
         private const string AddinName = "DevUtilsD365.TableBuilder";
         /// <summary>

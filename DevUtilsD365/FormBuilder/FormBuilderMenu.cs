@@ -17,7 +17,7 @@ namespace DevUtilsD365.FormBuilder
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "DevUtils - Form builder";
+        public override string Caption => "Developer Tools - Form builder";
 
         private const string AddinName = "DevUtilsD365.FormBuilder";
         /// <summary>

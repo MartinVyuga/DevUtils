@@ -42,7 +42,7 @@ namespace Developer_Tools_Labels_Editor.Parameters
         /// </summary>
         public override string Caption
         {
-            get { return "DevUtils - Settings"; }
+            get { return "Developer Tools - Settings"; }
         }
 
         /// <summary>

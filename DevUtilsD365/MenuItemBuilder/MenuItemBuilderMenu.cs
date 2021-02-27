@@ -16,7 +16,7 @@ namespace DevUtilsD365.MenuItemBuilder
     class MenuItemBuilderMenu : DesignerMenuBase
     {
         #region Properties
-        public override string Caption => "DevUtils - Create menu item";
+        public override string Caption => "Developer Tools - Create menu item";
 
         private const string AddinName = "DevUtilsD365.MenuItemBuilder";
         public override string Name => AddinName;

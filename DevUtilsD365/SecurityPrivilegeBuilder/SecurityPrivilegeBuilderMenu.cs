@@ -12,7 +12,7 @@ namespace DevUtilsD365.SecurityPrivilegeBuilder
     class SecurityPrivilegeBuilderMenu : DesignerMenuBase
     {
         #region Properties
-        public override string Caption => "DevUtils - Create security privilege";
+        public override string Caption => "Developer Tools - Create security privilege";
 
         private const string AddinName = "DevUtilsD365.SecurityPrivilegeBuilder";
         public override string Name => AddinName;

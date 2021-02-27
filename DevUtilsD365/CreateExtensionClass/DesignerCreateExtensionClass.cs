@@ -27,7 +27,7 @@ namespace DevUtilsD365.CreateExtensionClass
         /// <summary>
         ///     Caption for the menu item. This is what users would see in the menu.
         /// </summary>
-        public override string Caption => "DevUtils - Create extension class";
+        public override string Caption => "Developer Tools - Create extension class";
 
         private const string AddinName = "DevUtilsD365.CreateExtensionClass";
         /// <summary>
