@@ -154,7 +154,7 @@ This Add-in works for the selected Menu Item and creates new security privilege 
 
 ## Troubleshooting
 
-Current solution was tested on 8.0U15.
+Current solution was tested on 10.0.16 PU40.
 
 All tools require that you have an active project with your current model. The first project in the solution is used.
 
@@ -163,7 +163,7 @@ Only basic data validation is currently implemented. In case of any problem try 
 One of the ways to do this:
 
 * Download and install dnSpy debugger [dnSpy]: https://github.com/0xd4d/dnSpy
-* Run **dnSpy-x86.exe** file and open **TRUDUtilsD365.dll** from the VS AddinExtensions folder
+* Run **dnSpy-x86.exe** file and open **DEVUtilsD365.dll** from the VS AddinExtensions folder
 * Set the required breakpoints. Most of the logic located in ..Parms classes
 * Go to main menu Debug - Attach to process and choose Visual Studio with D365 project
 * Run Add-in in VS. The debugger should pop up
@@ -173,14 +173,16 @@ One of the ways to do this:
 Another option (this will run a new instance of VS)
 
 * Open the solution and set the required breakpoints
-* Got to the Project->Property->Debug (for TRUDUtilsD365 project)
+* Got to the Project->Property->Debug (for DEVUtilsD365 project)
 * Set start action to "start external program" and specify the parameter "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe"
 * Run the project
 
 ## Installation
 
-Download all 3 files and run **InstallToVS.exe**(Run as Administrator). It will copy **TRUDUtilsD365.dll** and **TRUDUtilsD365.pdb** to the VS AddinExtensions folders.
-
+Download all dll files and and copy **.dll** and **.pdb** to the VS AddinExtensions folders.
+It is located here: C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\ezldjgl4.uep\AddinExtensions
+Path can vary.
+TODO: find out what is the path?
 Restart VS
 
 You can also copy these files manually, but extension path will be different for different VMs. (for 8.0 local DEV VM it will be C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\agk3do44.e2i\AddinExtensions, for 8.1 local DEV VM: C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ugjn0jrw.pfb\AddinExtensions )
