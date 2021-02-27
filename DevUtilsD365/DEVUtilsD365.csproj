@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A63594B-16DA-4EDD-93C5-A38D01ABDB10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DevUtilsD365</RootNamespace>
+    <AssemblyName>DEVUtilsD365</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SkipAssemblyComVisible>true</SkipAssemblyComVisible>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata">
+      <HintPath>K:\AosService\PackagesLocalDirectory\bin\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.AX.Xpp.Support">
+      <HintPath>K:\AosService\PackagesLocalDirectory\bin\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.ProjectSupport">
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\wn3eorov.53w\Microsoft.Dynamics.Framework.Tools.ProjectSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.ProjectSystem">
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\wn3eorov.53w\Microsoft.Dynamics.Framework.Tools.ProjectSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddTableFindMethod\AddTableFindMethodDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTableFindMethod\AddTableFindMethodDialog.Designer.cs">
+      <DependentUpon>AddTableFindMethodDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTableFindMethod\AddTableFindMethodParms.cs" />
+    <Compile Include="AddTableFindMethod\AddTableFindMethodMenu.cs" />
+    <Compile Include="CopyExtensionMethod\CopyExtensionMethodParams.cs" />
+    <Compile Include="CopyExtensionMethod\DesignerCopyExtensionMethod.cs" />
+    <Compile Include="CreateExtensionClass\CreateExtensionClassDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateExtensionClass\CreateExtensionClassDialog.Designer.cs">
+      <DependentUpon>CreateExtensionClassDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateExtensionClass\CreateExtensionClassParms.cs" />
+    <Compile Include="CreateExtensionClass\DesignerCreateExtensionClass.cs" />
+    <Compile Include="DataContractBuilder\DataContractBuilderParms.cs" />
+    <Compile Include="DataContractBuilder\DataContractBuilderMenu.cs" />
+    <Compile Include="Kernel\CodeGenerateHelper.cs" />
+    <Compile Include="Kernel\SnippetsParms.cs" />
+    <Compile Include="MenuItemBuilder\MenuItemBuilderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuItemBuilder\MenuItemBuilderDialog.Designer.cs">
+      <DependentUpon>MenuItemBuilderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItemBuilder\MenuItemBuilderParms.cs" />
+    <Compile Include="EnumCreator\EnumCreatorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnumCreator\EnumCreatorDialog.Designer.cs">
+      <DependentUpon>EnumCreatorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCreator\EnumCreatorMenu.cs" />
+    <Compile Include="EnumCreator\EnumCreatorParms.cs" />
+    <Compile Include="FormBuilder\FormBuilderParms.cs" />
+    <Compile Include="FormBuilder\FormBuilderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuilder\FormBuilderDialog.Designer.cs">
+      <DependentUpon>FormBuilderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuilder\FormBuilderMenu.cs" />
+    <Compile Include="Kernel\AxHelper.cs" />
+    <Compile Include="MenuItemBuilder\MenuItemBuilderMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Kernel\SnippetsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kernel\SnippetsDialog.Designer.cs">
+      <DependentUpon>SnippetsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RunBaseBuilder\RunBaseBuilderParms.cs" />
+    <Compile Include="RunBaseBuilder\RunBaseBuilderMenu.cs" />
+    <Compile Include="SecurityPrivilegeBuilder\SecurityPrivilegeBuilderMenu.cs" />
+    <Compile Include="SecurityPrivilegeBuilder\SecurityPrivilegeBuilderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityPrivilegeBuilder\SecurityPrivilegeBuilderDialog.Designer.cs">
+      <DependentUpon>SecurityPrivilegeBuilderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityPrivilegeBuilder\SecurityPrivilegeBuilderParms.cs" />
+    <Compile Include="TableBuilder\TableBuilderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableBuilder\TableBuilderDialog.Designer.cs">
+      <DependentUpon>TableBuilderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableBuilder\TableBuilderMenu.cs" />
+    <Compile Include="TableBuilder\TableBuilderParms.cs" />
+    <Compile Include="TableFieldsBuilder\TableFieldsBuilderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableFieldsBuilder\TableFieldsBuilderDialog.Designer.cs">
+      <DependentUpon>TableFieldsBuilderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableFieldsBuilder\TableFieldsBuilderMenu.cs" />
+    <Compile Include="TableFieldsBuilder\TableFieldsBuilderParms.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddTableFindMethod\AddTableFindMethodDialog.resx">
+      <DependentUpon>AddTableFindMethodDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateExtensionClass\CreateExtensionClassDialog.resx">
+      <DependentUpon>CreateExtensionClassDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnumCreator\EnumCreatorDialog.resx">
+      <DependentUpon>EnumCreatorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuilder\FormBuilderDialog.resx">
+      <DependentUpon>FormBuilderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuItemBuilder\MenuItemBuilderDialog.resx">
+      <DependentUpon>MenuItemBuilderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kernel\SnippetsDialog.resx">
+      <DependentUpon>SnippetsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityPrivilegeBuilder\SecurityPrivilegeBuilderDialog.resx">
+      <DependentUpon>SecurityPrivilegeBuilderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableBuilder\TableBuilderDialog.resx">
+      <DependentUpon>TableBuilderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableFieldsBuilder\TableFieldsBuilderDialog.resx">
+      <DependentUpon>TableFieldsBuilderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\AddTableFindMethodParms.datasource" />
+    <None Include="Properties\DataSources\TRUDUtilsD365.CreateExtensionClass.CreateExtensionClassParms.datasource" />
+    <None Include="Properties\DataSources\TRUDUtilsD365.EnumCreator.EnumCreatorParms.datasource" />
+    <None Include="Properties\DataSources\TRUDUtilsD365.FormBuilder.FormBuilderParms.datasource" />
+    <None Include="Properties\DataSources\TRUDUtilsD365.Kernel.SnippetsParms.datasource" />
+    <None Include="Properties\DataSources\TRUDUtilsD365.MenuItemBuilder.MenuItemBuilderParms.datasource" />
+    <None Include="Properties\DataSources\TRUDUtilsD365.SecurityPrivilegeBuilder.SecurityPrivilegeBuilderParms.datasource" />
+    <None Include="Properties\DataSources\TRUDUtilsD365.TableBuilder.TableBuilderParms.datasource" />
+    <None Include="Properties\DataSources\TRUDUtilsD365.TableFieldsBuilder.TableFieldsBuilderParms.datasource" />
+    <None Include="Resources\TableFieldsBuilderTemplateV1.xlsm" />
+    <None Include="Resource\TableFieldsBuilderTemplateV1.xlsx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(INETROOT)\Source\Frameworks\DevToolsVS12\common\Microsoft.Dynamics.Framework.Tools.Extensibility.Targets" Condition=" '$(INETROOT)' != '' " />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Dynamics\AX\Microsoft.Dynamics.Framework.Tools.Extensibility.targets" Condition=" '$(INETROOT)' == '' " />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuildAction" Condition="'$(BuildingInsideVisualStudio)'=='true'" AfterTargets="AfterBuild">
+    <ItemGroup>
+      <OutputFiles Include="$(MSBuildProjectDirectory)\$(OutputPath)\**\*.*" />
+    </ItemGroup>
+    <Message Text="Copying @(OutputFiles)" Importance="high" />
+    <Copy SourceFiles="@(OutputFiles)" DestinationFiles="@(OutputFiles->'$(DynamicsVSToolsHintPath)\AddinExtensions\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Text="Copying finished" Importance="high" />
+  </Target>
+</Project>
