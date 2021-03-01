@@ -20,15 +20,31 @@ A set of Visual Studio Add-ins for Microsoft Dynamics 365 for Operation that wil
 You are more than welcome to contribute!
 
 ## Make text into labels
-This Add-In works for 
-Tables, Table Fields, and field groups.
+This Add-In works for:
 
-Forms and form designs
+* Tables, Table Fields, and field groups and developer documentation.
+* Forms and form designs
+* Menu Items/Display/Output/Actions
+* Menus/Security Priviliges
 
-Menu Items/Display/Output/Actions
-  How it wokrs?
+#	How it works?
+Open your D365 FO project
 
-Menus/Security Priviliges
+Go to Dynamics 365->Add-Ins
+
+![](assets/LabelSettings.png)
+
+Fill in the Label and Project Prefix information
+
+![](assets/FillLabelAndPrefix.png)
+
+Then open your element in your project.
+
+Right-click->Add Ins and select convert to labels option
+
+![](assets/ConverttextToLabels.png)
+
+The labels and help text text is converted to @{ProjectPrefix}:{ElementName} and @{ProjectPrefix}:{ElementName}Hlp, and for developer documentation: @{ProjectPrefix}:{ElementName}DeveloperDocumentation
 
 ## Create extension class
 
