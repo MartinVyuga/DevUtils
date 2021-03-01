@@ -20,9 +20,15 @@ A set of Visual Studio Add-ins for Microsoft Dynamics 365 for Operation that wil
 You are more than welcome to contribute!
 
 ## Make text into labels
-This Add-In works so far for standard Tables, Table Fields, and field groups.
+This Add-In works for 
+Tables, Table Fields, and field groups.
 
-TODO: Add support for forms, form designs etc. 
+Forms and form designs
+
+Menu Items/Display/Output/Actions
+  How it wokrs?
+
+Menus/Security Priviliges
 
 ## Create extension class
 
