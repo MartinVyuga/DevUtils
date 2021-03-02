@@ -49,6 +49,10 @@ namespace Developer_Tools_Labels_Editor.Parameters
                     Instance.DefaultLabelsFileName = projParams.DefaultLabelsFileName;
                 }
             }
+            else
+            {
+                File.Create(ParamFilePath);
+            }
         }
 
 

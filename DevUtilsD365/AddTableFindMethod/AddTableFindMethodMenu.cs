@@ -14,7 +14,7 @@ namespace DevUtilsD365.AddTableFindMethod
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(BaseField))]
     public class AddTableFindMethodMenu : DesignerMenuBase
     {
-        public override string Caption => "Create find method";
+        public override string Caption => "Developer Tools - Create find method";
 
         private const string AddinName = "DevUtilsD365.AddTableFindMethod";
         public override string Name => AddinName;
