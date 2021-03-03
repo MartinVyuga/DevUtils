@@ -137,6 +137,15 @@
 
                     this.createLabel(table, labelFile);
                 }
+                if (e.SelectedElement is ITableExtension)
+                {
+                    var table = e.SelectedElement as ITableExtension;
+
+                    modelInfoCollection = metaModelService.GetTableModelInfo(table.Name);
+                    AxLabelFile labelFile = this.GetLabelFile(metaModelProvider, metaModelService, modelInfoCollection);
+
+                    this.createLabel(table, labelFile);
+                }
                 if (e.SelectedElement is IForm)
                 {
                     var form = e.SelectedElement as IForm;
@@ -256,6 +265,35 @@
                 if (!this.IsValidLabelId(field.Label))
                 { 
                     field.Label = this.FindOrCreateLabel(field.Label, field.Name,"Lbl",labelFile);
+                }
+                if (!this.IsValidLabelId(field.HelpText))
+                {
+                    field.HelpText = this.FindOrCreateLabel(field.HelpText, field.Name, "Hlp", labelFile);
+                }
+
+            }
+            //loop through the fieldgroups
+            var fieldGroupsEnumerator = table.FieldGroups.GetEnumerator();
+            while (fieldGroupsEnumerator.MoveNext())
+            {
+                var fieldGroup = fieldGroupsEnumerator.Current as IFieldGroup;
+                if (!this.IsValidLabelId(fieldGroup.Label))
+                {
+                    fieldGroup.Label = this.FindOrCreateLabel(fieldGroup.Label, fieldGroup.Name, "lbl", labelFile);
+                }
+
+            }
+        }
+        private void createLabel(ITableExtension table, AxLabelFile labelFile)
+        { 
+            //loop through the fields
+            var fieldsEnumerator = table.DataContractFields.GetEnumerator();
+            while (fieldsEnumerator.MoveNext())
+            {
+                var field = fieldsEnumerator.Current as IBaseField;
+                if (!this.IsValidLabelId(field.Label))
+                {
+                    field.Label = this.FindOrCreateLabel(field.Label, field.Name, "Lbl", labelFile);
                 }
                 if (!this.IsValidLabelId(field.HelpText))
                 {
