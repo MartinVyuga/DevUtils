@@ -35,6 +35,7 @@ namespace Developer_Tools_Labels_Editor.Parameters
         private void SaveParameters_Click(object sender, EventArgs e)
         {
             ProjectParameters.Instance.Save();
+            this.Close();
         }
 
         //private void InitializeComponent()

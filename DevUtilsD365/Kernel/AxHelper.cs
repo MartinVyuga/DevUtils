@@ -10,6 +10,7 @@ using Microsoft.Dynamics.AX.Metadata.MetaModel;
 using Microsoft.Dynamics.AX.Metadata.Providers;
 using Microsoft.Dynamics.AX.Metadata.Service;
 using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
+using Microsoft.Dynamics.Framework.Tools.ProjectSupport;
 using Microsoft.Dynamics.Framework.Tools.ProjectSystem;
 
 namespace DevUtilsD365.Kernel

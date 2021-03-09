@@ -44,10 +44,10 @@
       <HintPath>K:\AosService\PackagesLocalDirectory\bin\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.ProjectSupport">
-      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\wn3eorov.53w\Microsoft.Dynamics.Framework.Tools.ProjectSupport.dll</HintPath>
+      <HintPath>K:\DeployablePackages\a6d26275-8571-4ff5-8fcd-6d96a48be8fa\DevToolsService\Code\Microsoft.Dynamics.Framework.Tools.ProjectSupport.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.ProjectSystem">
-      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\wn3eorov.53w\Microsoft.Dynamics.Framework.Tools.ProjectSystem.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\wn3eorov.53w\Microsoft.Dynamics.Framework.Tools.ProjectSystem.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

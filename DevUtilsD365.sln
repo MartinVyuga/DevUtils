@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEVUtilsD365", "DEVUtilsD36
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTableFindMethodTest", "AddTableFindMethodTest\AddTableFindMethodTest.csproj", "{B6E6E027-FF26-4E9E-B03B-DB07570C77DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Developer Tools Labels Editor", "Developer Tools Labels Editor\Developer Tools Labels Editor.csproj", "{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeveloperToolsAddin", "DeveloperToolsAddin\DeveloperToolsAddin.csproj", "{7EB18475-2BB8-4D01-B390-BECADAF45A9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,10 @@ Global
 		{3A63594B-16DA-4EDD-93C5-A38D01ABDB10}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6E6E027-FF26-4E9E-B03B-DB07570C77DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6E6E027-FF26-4E9E-B03B-DB07570C77DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D604F8B-3487-49FB-B55B-CCB08F47D5B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB18475-2BB8-4D01-B390-BECADAF45A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB18475-2BB8-4D01-B390-BECADAF45A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB18475-2BB8-4D01-B390-BECADAF45A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB18475-2BB8-4D01-B390-BECADAF45A9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
